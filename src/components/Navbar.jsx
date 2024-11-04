@@ -39,9 +39,9 @@ const Navbar = () => {
     }, [open]);
     return (
         <div className={`fixed top-0 w-full z-50 transition-colors duration-300 ${scrolled ? "bg-white shadow-lg" : "bg-purple-300 shadow-lg"}`}>
-            <div className="flex flex-row items-center justify-between no-underline bg-white border rounded-full lg:px-8 lg:py-7 max-lg:px-6 max-lg:py-5 lg:mt-4 lg:mb-2 lg:mx-4 max-lg:mx-2 max-lg:my-2">
-                <div className="">
-                    <Link to={'/'} className="cursor-pointer"><img src={logo} className="cursor-pointer w-60" alt="" /></Link>
+            <div className="flex flex-row items-center no-underline bg-white border rounded-full max-lg:justify-evenly md:justify-between lg:px-8 lg:py-7 max-lg:px-6 max-lg:py-5 lg:mt-4 lg:mb-2 lg:mx-4 max-lg:mx-2 max-lg:my-2 max-md:p-2">
+                <div className="max-md:w-[40%] items-center justify-center">
+                    <Link to={'/'} className="cursor-pointer"><img src={logo} className="m-2 cursor-pointer w-60" alt="" /></Link>
                 </div>
                 <div className="hidden grid-cols-5 gap-4 lg:grid">
                     <div className="relative group">
@@ -199,15 +199,15 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex">
-                    <Link to="/login" className="py-2 mx-4 cursor-pointer max-lg:py-3">Login</Link>
-                    <button className="px-4 py-2 duration-300 bg-purple-500 border rounded-full hover:-translate-y-2">
-                        <Link to="/signup" className="text-white">Try for Free</Link>
+                <div className="flex items-center gap-2 max-md:flex-row">
+                    <Link to="/login" className="py-2 mx-3 cursor-pointer max-lg:py-3 max-md:py-8">Login</Link>
+                    <button className="p-2 duration-300 bg-purple-500 border rounded-full hover:-translate-y-2 max-md:">
+                        <Link to="/signup" className="text-white max-md:text-md">Try for Free</Link>
                     </button>
-                    <div className="relative hidden px-2 py-2 max-lg:block">
-                        <img onClick={() => setOpen(!open)} src={downArrow} className="cursor-pointer w-7" alt="Toggle Menu"/>
-                        <div className={`absolute top-20 md:left-[-900px] max-md:left-[px] min-w-full ${open ? 'block' : 'hidden'}`}>
-                            <ul className="p-4 max-lg:w-[1000px] max-md:w-[700px] items-center justify-center text-center bg-white">
+                    <div className="relative hidden py-2 max-md:my-auto max-md:mx-auto max-lg:block">
+                        <img onClick={() => setOpen(!open)} src={downArrow} className={`m-3 cursor-pointer w-7 ${open ? 'rotate-180' : 'rotate-0'}`} alt="Toggle Menu"/>
+                        <div className={`absolute top-20 md:left-[-900px] max-md:left-[-300px] max-md:mx-auto max-md:my-auto max-md:py-5 md:min-w-full ${open ? 'block' : 'hidden'}`}>
+                            <ul className="p-4 max-lg:w-[1000px] max-md:max-w-[300px] max-md:mx-auto max-md:my-auto items-center justify-center text-center bg-white">
                                 <li><Link to="/overview">Overview</Link></li>
                                 <li><Link to="/pricing">Pricing</Link></li>
                                 <li><Link to="/features">Features</Link></li>
